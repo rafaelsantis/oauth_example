@@ -1,9 +1,24 @@
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 <% if (!user) { %>
   <div style="width:500px;height:180px;">
     <h2 style="font-size:40px;">Welcome! Please log in.</h2>
-    <a href="/auth/google">Continuar com Google</a>
+    <p>
+      <a class="btn btn-danger" type="button" href="auth/google">
+      <i class="fa fa-google-plus-square"></i>  Continuar com Google</span>
+    </a>
+   </p>
+    <p>
+      <a class="btn btn-primary" href="auth/facebook">
+          <i class="fa fa-facebook-square"></i>  Continuar com Facebook</span>
+      </a>
+  </p>
   </div>
+
 <% } else { %>
+  <img src=<%= user.picture %> alt="Minha Figura">
   <h2>Hello, <%= user.displayName %>.</h2>
   <a href="/logout">Logout</a>
 <% } %>
